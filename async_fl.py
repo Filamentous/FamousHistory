@@ -198,35 +198,3 @@ if __name__ == '__main__':
     #fl_inter.check_json('healys.json')
     #hits = fl_inter.check_user("Healys")
     #print(hits)
-    
-
-
-
-#
-# DO NOT ENTER, OLD CODE >:(
-#
-
-
-# form_data = request.form
-#         f(form_data['user_name'])
-#         in_region = 'na1'
-#         lol_watcher = LolWatcher('RGAPI-26905cd7-4de4-4cb4-b4c7-324d6634e009')
-#         f = open('league.json', 'r')
-#         data = json.load(f)
-#         f.close()
-#         user = lol_watcher.summoner.by_name(in_region, form_data['user_name'])
-#         #print(user)
-#         matches = lol_watcher.match.matchlist_by_puuid(in_region, user['puuid'], count=10)
-#         hits= []
-#         for match in matches:
-#             match_data = lol_watcher.match.by_id(in_region, str(match))
-#             #print(match_data)
-#             for x in match_data['info']['participants']:
-#                 for fp in data:
-#                     un_csv = str(data[fp])
-#                     un_list = un_csv.split(',')
-#                     for acc_un in un_list:
-#                         if acc_un == x['summonerName']:
-#                             dis = str(fp) +' AS '+ str(acc_un)
-#                             hits.append((match,dis))   
-#         print(hits)
