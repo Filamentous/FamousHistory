@@ -19,7 +19,7 @@ class Famous_list():
                 countreq=9999
             index = 0
             matches = []
-            lol_watcher = LolWatcher('RGAPI-b8ec1d1b-6426-4039-a921-02eeeacecdde')
+            lol_watcher = LolWatcher('')
             first = time.perf_counter()
             #print("get summoner")
             user = lol_watcher.summoner.by_name(region, lolusername)
