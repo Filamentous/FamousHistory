@@ -5,6 +5,9 @@ import time, json
 
 
 class Famous_list():
+    """
+    View readme.md
+    """
     def __init__(self) -> None: 
         self.MAX_REQUESTS_SEC = 20
         self.MAX_REQUESTS_2MIN = 100
@@ -13,7 +16,12 @@ class Famous_list():
         self.SCRIPT_START = time.perf_counter()
 
 
-    def get_history(self, lolusername:str, countreq:int, region:str='na1'):    
+    def get_history(self, lolusername:str, countreq:int=0, region:str='na1'):    
+        """
+        lolusername: summonername, username to check against processed list
+        countreq: number of games to check (default=0 is all games)
+        region: the region which to retrieve summoner information from
+        """
         try:
             if countreq == 0:
                 countreq=9999
@@ -114,6 +122,10 @@ class Famous_list():
 
 
     def check_json(self, name:str='league.json'):
+        """
+        checks a json file that all summoner names exist, very useful for larger data sets
+        name: name of the file
+        """
         f = open(name, 'r')
         data = json.load(f)
         for f in data:
@@ -140,6 +152,11 @@ class Famous_list():
 
 
     def process_json(self, name:str='league.json', out_name:str='fpgameid.json'):
+        """
+        Processes a list of summoner names and creates a json formatted to be read by check history
+        name: file name to be processed
+        out_name: file name of the proccessed list (does overwrite the file)
+        """
         f = open(name, 'r')
         data = json.load(f)
         n = open(out_name, 'w')
@@ -170,6 +187,10 @@ class Famous_list():
         n.close()
 
     def check_user(self, user:str, namejson:str='fpgameid1.json'):
+        """
+        Checks user against specified output file processed json
+        user: summoner name, to check
+        """
         f = open(namejson, 'r')
         data = json.load(f)
         hit_list = []
