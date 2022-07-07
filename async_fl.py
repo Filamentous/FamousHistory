@@ -16,7 +16,7 @@ class Famous_list():
         self.SCRIPT_START = time.perf_counter()
 
 
-    def get_history(self, lolusername:str, countreq:int=0, region:str='na1'):    
+    def _get_history(self, lolusername:str, countreq:int=0, region:str='na1'):    
         """
         lolusername: summonername, username to check against processed list
         countreq: number of games to check (default=0 is all games)
@@ -133,7 +133,7 @@ class Famous_list():
             un_csv = str(data[f])
             un_list = un_csv.split(',')
             for b in un_list:
-                history = self.get_history(b, 80)
+                history = self._get_history(b, 80)
                 if history is None:
                     print("EMPTY HISTORY")
                     break
@@ -166,7 +166,7 @@ class Famous_list():
             un_csv = str(data[fp])
             un_list = un_csv.split(',')
             for alt in un_list:
-                history = self.get_history(alt, 0)
+                history = self._get_history(alt, 0)
                 if history is None:
                     print("EMPTY HISTORY")
                     break
@@ -194,7 +194,7 @@ class Famous_list():
         f = open(namejson, 'r')
         data = json.load(f)
         hit_list = []
-        user_history=self.get_history(user,0)
+        user_history=self._get_history(user,0)
         if user_history == None:
             return []
         for user_game in user_history:
@@ -215,7 +215,7 @@ class Famous_list():
 
 if __name__ == '__main__':
     fl_inter = Famous_list()
-    #fl_inter.process_json('healys.json', 'healysO.json')
-    #fl_inter.check_json('healys.json')
-    #hits = fl_inter.check_user("Healys")
+    #fl_inter.check_json('league.json')
+    #fl_inter.process_json('league.json')
+    #hits = fl_inter.check_user("SUMMONERNAME")
     #print(hits)
