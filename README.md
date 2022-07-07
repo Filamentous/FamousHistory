@@ -1,6 +1,6 @@
 # FamousHistory
 Using RIOT API
-This a gimmick that uses RIOT api to check if a user appears in a pre-processed json.
+This a gimmick that uses RIOT api to check if a user appears in a pre-processed json of match ids.
 
 Setup: Visit the RIOT developer portal and create a developement key.
 Add this developement key to the Init in the script
