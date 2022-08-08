@@ -14,6 +14,7 @@ class Famous_list():
         self.RIOT_JITTER = 0.25 # probably unneccessary but its funny
         self.OPS_COUNTER = 0
         self.SCRIPT_START = time.perf_counter()
+        self.KEY = ''
 
 
     def _get_history(self, lolusername:str, countreq:int=0, region:str='na1'):    
@@ -27,7 +28,7 @@ class Famous_list():
                 countreq=9999
             index = 0
             matches = []
-            lol_watcher = LolWatcher('')
+            lol_watcher = LolWatcher(self.KEY)
             first = time.perf_counter()
             #print("get summoner")
             user = lol_watcher.summoner.by_name(region, lolusername)
@@ -75,7 +76,7 @@ class Famous_list():
         matches = []
         first = time.perf_counter()
         print("op_Second")
-        lol_watcher = LolWatcher('RGAPI-b8ec1d1b-6426-4039-a921-02eeeacecdde')
+        LolWatcher(self.KEY)
         for _ in range(self.MAX_REQUESTS_SEC-1):
             print("get matches")
             allowance = (((self.SCRIPT_START - time.perf_counter()-((self.SCRIPT_START - time.perf_counter()%120))/120)+1)*self.MAX_REQUESTS_2MIN)
