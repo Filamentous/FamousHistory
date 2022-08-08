@@ -76,7 +76,7 @@ class Famous_list():
         matches = []
         first = time.perf_counter()
         print("op_Second")
-        LolWatcher(self.KEY)
+        lol_watcher = LolWatcher(self.KEY)
         for _ in range(self.MAX_REQUESTS_SEC-1):
             print("get matches")
             allowance = (((self.SCRIPT_START - time.perf_counter()-((self.SCRIPT_START - time.perf_counter()%120))/120)+1)*self.MAX_REQUESTS_2MIN)
